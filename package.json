@@ -1,14 +1,17 @@
 {
   "name": "my-modern-portfolio",
   "version": "1.0.0",
-  "description": "my new modren responsive portfolio using sass",
+  "description": "my new modern responsive portfolio using sass",
   "main": "index.js",
+  "homepage": "https://sahmed1035.github.io/my-modren-portfolio",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/dist/css/ --recursive"
+    "sass": "node-sass -w scss/ -o dist/dist/css/ --recursive",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Syeda Ahmed",
   "license": "MIT",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.12.0"
   }
 }
