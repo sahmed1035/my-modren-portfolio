@@ -1,0 +1,205 @@
+@import "config";
+@import "menu";
+
+// everything in a border box
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include background;
+  background: $primary-color;
+  color: set-text-color($primary-color);
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+// Headings
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.lg-heading {
+    font-size: 6rem;
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primary-color, 2), 0.5);
+  }
+}
+
+// Links
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  position: fixed; // header menu stays the same position
+  z-index: 2; //making it closer on the screen. the bigger the number, the closer towards you it is.
+  width: 100%; // stretches across the whole screen
+}
+
+// setting the color to a variable
+.text-secondary {
+  color: $secondaray-color;
+}
+
+// styling for main section
+main {
+  padding: 4rem;
+  //making footer not to move up if there is no content. 100 view height - 60px footer height
+  min-height: calc(100vh - 60px);
+
+  // nesting .icon in this main so that icons inside the main only will be affected.
+  .icons {
+    margin-top: 1rem; // bringing icons down
+
+    // for the social button links
+    a {
+      padding: 0.4rem; //spacing between each icon
+
+      &:hover {
+        color: $secondaray-color;
+        // easeOut function for transition
+        @include easeOut();
+      }
+    }
+  }
+
+  // main that has an id of "home" is going to affect
+  &#home {
+    overflow: hidden; // no scroll bar
+    h1 {
+      margin-top: 20vh; // vh is for view port hight.
+    }
+  }
+}
+
+// grid for about page. 3 fractional grids
+.about-info {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas:
+    "bioimage bio bio"
+    "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+
+  // creating grid areas
+  .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondaray-color 3px solid;
+  }
+
+  .bio {
+    grid-area: bio;
+    font-size: 1rem;
+  }
+
+  .job-1 {
+    grid-area: job1;
+  }
+
+  .job-2 {
+    grid-area: job2;
+  }
+
+  .job-3 {
+    grid-area: job3;
+  }
+
+  // job box styling
+  .job {
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondaray-color 5px solid;
+  }
+}
+
+// Work/Projects work.html
+.projects {
+  display: grid;
+  grid-gap: 1rem;
+  // grid-template-areas: "item-1 item-2 item-3";
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    border: 3px #fff solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $secondaray-color;
+      @include easeOut;
+    }
+  }
+}
+
+// Contact Page disply flex
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+
+  div {
+    font-size: 2rem;
+    border: 3px #fff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    @include easeOut;
+
+    &:hover {
+      padding: 0.5rem 1.5rem;
+      background: $secondaray-color;
+      color: set-text-color($secondaray-color);
+      span {
+        color: set-text-color($secondaray-color);
+      }
+    }
+  }
+}
+
+// Button Style for github and view on work.html page. making it seperate so that can use other places
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+
+  &:hover {
+    background: $secondaray-color;
+    color: set-text-color($secondaray-color);
+  }
+}
+
+// extending btn class
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 25);
+  color: #333;
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10);
+  color: set-text-color($primary-color);
+  height: 60px;
+}
+
+@import "mobile";
