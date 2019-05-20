@@ -1,5 +1,5 @@
 // Menu Button. creating lines for menu button
-.menu_btn {
+.menu-btn {
   position: absolute;
   z-index: 3;
   right: 35px;
@@ -90,7 +90,8 @@
     .portrait {
       width: 250px;
       height: 250px;
-      background: url("../img/sha3.png");
+      background: url("../img/profile-Resized1-2.jpg");
+      background-repeat: no-repeat;
       border-radius: 50%;
       border: solid 3px $secondaray-color;
     }

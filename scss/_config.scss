@@ -20,7 +20,6 @@ $background-opacity: 0.9;
       background-size: cover;
 
       // overlay . instead of overlay using suedo element after. using rgba so that we can use opacity. we want to look throug the overlay color.
-      //z-index to puth the overlay behind the text heading.
       &:after {
         content: "";
         position: absolute;
