@@ -40,7 +40,7 @@
   .menu-nav {
     margin: 0;
     padding: 0;
-    background: #002531;
+    background: #001a21;
     list-style: none;
     transform: translate3d(0, -100%, 0);
     transition: all 0.5s ease-out; }
@@ -53,8 +53,8 @@
     .menu-branding.show {
       transform: translate3d(0, 0, 0); }
     .menu-branding .portrait {
-      width: 250px;
-      height: 250px;
+      width: 240px;
+      height: 240px;
       background: url("../img/profile-Resized1-2.jpg");
       background-repeat: no-repeat;
       border-radius: 50%;
@@ -72,7 +72,7 @@
     font-size: 30px;
     text-transform: uppercase;
     padding: 1rem 0;
-    font-weight: 300;
+    font-weight: 400;
     color: #fff;
     text-decoration: none;
     transition: all 0.5s ease-out; }
